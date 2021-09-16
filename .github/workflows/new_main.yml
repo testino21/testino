@@ -23,15 +23,14 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        run: |
-          npm run build
-          npm start
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
+          record: true
       - name: start express
-        run: |
-          npm run start-express
-      - name: start cypress tests
-        run: |
-          npm run ci:run
+        usesstart: npm run start-express : cypress-io/github-action@v2
+        with:
       env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
