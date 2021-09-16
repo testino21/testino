@@ -24,8 +24,8 @@ jobs:
       # and run all Cypress tests
       - name: start express
         uses: cypress-io/github-action@v2
-          with:
-            start: npm run start-express
+        with:
+          start: npm run start-express
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
