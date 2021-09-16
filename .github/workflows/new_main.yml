@@ -24,11 +24,11 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         run: |
-          build: npm run build
-          start: npm start
+          npm run build
+          npm start
       - name: start express
         run: |
-          run: npm run start-express
+          npm run start-express
       - name: start cypress tests
         run: |
           npm run ci:run
