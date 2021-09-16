@@ -27,10 +27,8 @@ jobs:
         with:
           build: npm run build
           start-express: npm run start-express
-          wait-on: http://localhost:3000
-      - name: Start Cypress testing after Server start
-        uses: cypress-io/github-action@v2
           start: npm start
+          wait-on: http://localhost:3000
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
