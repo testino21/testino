@@ -22,16 +22,13 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Start server
-        uses: cypress-io/github-action@v2
-        with: 
-          start: npm run start-express
-          wait-on: http://localhost:3000
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start
+          start-express: npm run start-express
+          wait-on: http://localhost:3000
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
