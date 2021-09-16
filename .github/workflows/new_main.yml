@@ -26,9 +26,12 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          build: npm run start-express
           start: npm start
           record: true
+      - name: start express
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run start-express 
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
