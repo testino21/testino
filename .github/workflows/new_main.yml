@@ -25,11 +25,11 @@ jobs:
       - name: start express
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
           start: npm run start-express
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
           start: npm start
           record: true
         env:
