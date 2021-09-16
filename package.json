@@ -6,10 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "cypress",
-    "cy:run:firefox": "cypress run --browser firefox",
+    "test": "./node_modules/.bin/cypress run --headless -browser firefox",
+    "cy:run:firefox": "cypress run --headless --browser firefox",
     "go-to-express": "",
-    "start-express": "nodemon --exec npm start app.js --prefix ./testino-service"
+    "start-express": "nodemon --exec npm start app.js --prefix ./testino-service",
+
+    "ci:start-server": "nodemon --exec npm start app.js --prefix ./testino-service",
+    "ci:run": "cypress run --headless --browser firefox",
+    "ci:cy-run": "start-server-and-test ci:start-server http://localhost:4200 cy:run"
   },
   "private": true,
   "dependencies": {
