@@ -7,7 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "cypress",
-    "cy:run:firefox": "cypress run --browser firefox"
+    "cy:run:firefox": "cypress run --browser firefox",
+    "go-to-express": "",
+    "start-express":  "nodemon --exec npm start app.js --prefix ./testino-service"
   },
   "private": true,
   "dependencies": {
