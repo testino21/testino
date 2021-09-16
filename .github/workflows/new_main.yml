@@ -29,10 +29,10 @@ jobs:
       - name: start express
         run: |
           run: npm run start-express
-      env:
       - name: start cypress tests
         run: |
           npm run ci:run
+      env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
