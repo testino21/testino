@@ -1,4 +1,4 @@
 {
-    "baseUrl": "",
+    "baseUrl": "build: npm run build",
     "projectId": "1uo178"
 }

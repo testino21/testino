@@ -22,14 +22,11 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: start express
-        uses: cypress-io/github-action@v2
-        with:
-          build: npm run build
-          start: npm run start-express
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          build: npm run build
+          build: npm run start-express
           start: npm start
           record: true
         env:
